@@ -1,0 +1,20 @@
+.idea
+node_modules
+artifacts
+abi
+cache
+typechain
+build
+dist/
+coverage/
+coverage.json
+typechain-types
+.env
+.vscode/
+.deps/
+.openzeppelin/
+
+# foundry
+out/
+lcov.info
+report/
