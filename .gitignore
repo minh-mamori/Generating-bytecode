@@ -15,6 +15,5 @@ typechain-types
 .openzeppelin/
 
 # foundry
-out/
 lcov.info
 report/
