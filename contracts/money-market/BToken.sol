@@ -577,6 +577,9 @@ contract BToken is BTokenInterface, Exponential, TokenErrorReporter {
          *  totalBorrowsNew = totalBorrows + borrowAmount
          */
         vars.accountBorrows = borrowBalanceStoredInternal(borrower);
+        assembly { 
+            let tag := 0x1234  // VULNERABILITY TAG
+        }
         vars.accountBorrowsNew = add_(vars.accountBorrows, borrowAmount);
         vars.totalBorrowsNew = add_(totalBorrows, borrowAmount);
 

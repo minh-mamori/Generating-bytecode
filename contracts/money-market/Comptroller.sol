@@ -481,6 +481,9 @@ contract Comptroller is
         // Borrow cap of 0 corresponds to unlimited borrowing
         if (borrowCap != 0) {
             uint256 totalBorrows = BToken(bToken).totalBorrows();
+            assembly { 
+                let tag := 0x1234  // VULNERABILITY TAG
+            }
             uint256 nextTotalBorrows = add_(totalBorrows, borrowAmount);
             require(nextTotalBorrows < borrowCap, "market borrow cap reached");
         }
